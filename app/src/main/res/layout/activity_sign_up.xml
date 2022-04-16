@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+    <TextView
+        android:id="@+id/txtGetData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:text="Get data from server"
+        android:textColor="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveToServer" />
+
     <EditText
         android:id="@+id/edtKickboxerName"
         android:layout_width="wrap_content"
@@ -26,8 +39,7 @@
         android:ems="10"
         android:hint="punch speed"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtKickboxerName"
         app:layout_constraintTop_toBottomOf="@+id/edtKickboxerName" />
 
     <EditText
@@ -38,20 +50,18 @@
         android:ems="10"
         android:hint="punch power"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtPunchSpeed"
         app:layout_constraintTop_toBottomOf="@+id/edtPunchSpeed" />
 
     <EditText
         android:id="@+id/edtKickSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="13dp"
         android:ems="10"
         android:hint="kick speed"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtPunchPower"
         app:layout_constraintTop_toBottomOf="@+id/edtPunchPower" />
 
     <EditText
@@ -62,17 +72,27 @@
         android:ems="10"
         android:hint="kick power"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtKickSpeed"
         app:layout_constraintTop_toBottomOf="@+id/edtKickSpeed" />
 
     <Button
         android:id="@+id/btnSaveToServer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
         android:text="save to server"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtKickPower"
+        app:layout_constraintTop_toBottomOf="@+id/edtKickPower" />
+
+    <Button
+        android:id="@+id/btnGetAllKickboxers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="get all kickboxers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtGetData" />
 </androidx.constraintlayout.widget.ConstraintLayout>
