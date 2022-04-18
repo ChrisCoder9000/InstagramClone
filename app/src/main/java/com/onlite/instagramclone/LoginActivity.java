@@ -45,9 +45,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         btnSignUpChangeActivity.setOnClickListener(this);
 
-        if (ParseUser.getCurrentUser() != null) {
-            ParseUser.getCurrentUser().logOut();
-        }
+//        if (ParseUser.getCurrentUser() != null) {
+////            ParseUser.getCurrentUser().logOut();
+//            transitionToSocialMediaActivity();
+//        }
     }
 
     @Override
@@ -66,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void done(ParseUser user, ParseException e) {
                             if (user != null && e == null) {
                                 FancyToast.makeText(LoginActivity.this, user.getUsername() + "is logged in!", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                transitionToSocialMediaActivity();
                             }
                         }
                     });
@@ -85,5 +87,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void transitionToSocialMediaActivity() {
+        Intent intent = new Intent(LoginActivity.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 }
